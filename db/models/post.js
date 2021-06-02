@@ -5,7 +5,7 @@ const db = require('../db');
 
 const Post = db.define('post', {
   postText: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false
   },
   date: {

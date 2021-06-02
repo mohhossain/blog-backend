@@ -1,5 +1,6 @@
 //node modules
 const express = require('express')
+const bodyParser = require('body-parser')
 
 //import variables
 const PORT = 8000;
@@ -8,7 +9,12 @@ const createLocalDatabase = require('./createLocalDatabase');
 const seed = require('./seed');
 
 
+
 const app = express();
+
+// middleware
+app.use(express.json());
+app.use(express.urlencoded());
 
 app.use('/api', require('./api'));
 
